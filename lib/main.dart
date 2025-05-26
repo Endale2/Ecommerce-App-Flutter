@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/core/configs/theme/app_theme.dart';
 import 'package:ecommerce_app/presentation/splash/bloc/splash_cubit.dart';
 import 'package:ecommerce_app/presentation/splash/pages/splash.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
     return BlocProvider(
       create: (context) => SplashCubit()..appStarted(),
       child: MaterialApp(
+        theme: AppTheme.appTheme,
         home: SplashPage(),
       ),
     );

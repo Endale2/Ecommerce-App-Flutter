@@ -2,6 +2,7 @@ import 'package:ecommerce_app/common/helper/navigator/app_navigator.dart';
 import 'package:ecommerce_app/common/widgets/appbar/app_bar.dart';
 import 'package:ecommerce_app/common/widgets/button/basic_app_button.dart';
 import 'package:ecommerce_app/presentation/auth/pages/enter_password.dart';
+import 'package:ecommerce_app/presentation/auth/pages/signup_page.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -56,7 +57,9 @@ class SigninPage extends StatelessWidget {
         TextSpan(
             text: "Create one",
             style: TextStyle(fontWeight: FontWeight.bold),
-            recognizer: TapGestureRecognizer()..onTap = () {})
+            recognizer: TapGestureRecognizer()..onTap = () {
+              AppNavigator.push(context, SignupPage());
+            })
       ]),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/common/helper/navigator/app_navigator.dart';
+import 'package:ecommerce_app/common/widgets/appbar/app_bar.dart';
 import 'package:ecommerce_app/common/widgets/button/basic_app_button.dart';
 import 'package:ecommerce_app/presentation/auth/pages/enter_password.dart';
 import 'package:flutter/gestures.dart';
@@ -10,8 +11,9 @@ class SigninPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: BasicAppbar(),
         body: Padding(
-      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 40),
+      padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

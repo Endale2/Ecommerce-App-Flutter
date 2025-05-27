@@ -4,8 +4,8 @@ import 'package:ecommerce_app/presentation/auth/pages/enter_password.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-class SigninPage extends StatelessWidget {
-  const SigninPage({super.key});
+class ForgotPasswordPage extends StatelessWidget {
+  const ForgotPasswordPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,14 +21,14 @@ class SigninPage extends StatelessWidget {
           const SizedBox(height: 20),
           _continueButton(context),
           const SizedBox(height: 20),
-          _createAccount(context)
+          
         ],
       ),
     ));
   }
 
   Widget _signinText(BuildContext context) {
-    return Text("Sign In",
+    return Text("Forgot Password?",
         style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold));
   }
 
@@ -41,21 +41,10 @@ class SigninPage extends StatelessWidget {
   Widget _continueButton(BuildContext context) {
     return BasicAppButton(
       onPressed: () {
-        AppNavigator.push(context, EnterPasswordPage());
+        
       },
       title: "Continue",
     );
   }
 
-  Widget _createAccount(BuildContext context) {
-    return RichText(
-      text: TextSpan(children: [
-        TextSpan(text: "Do you have an account? "),
-        TextSpan(
-            text: "Create one",
-            style: TextStyle(fontWeight: FontWeight.bold),
-            recognizer: TapGestureRecognizer()..onTap = () {})
-      ]),
-    );
-  }
 }

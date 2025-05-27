@@ -1,4 +1,7 @@
+import 'package:ecommerce_app/common/helper/navigator/app_navigator.dart';
+import 'package:ecommerce_app/common/widgets/appbar/app_bar.dart';
 import 'package:ecommerce_app/common/widgets/button/basic_app_button.dart';
+import 'package:ecommerce_app/presentation/auth/pages/forgot_password_page.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -8,21 +11,22 @@ class EnterPasswordPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: BasicAppbar(),
         body: Padding(
-      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 40),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _signinText(context),
-          const SizedBox(height: 20),
-          _passwordField(context),
-          const SizedBox(height: 20),
-          _continueButton(context),
-          const SizedBox(height: 20),
-          _forgotPassword(context)
-        ],
-      ),
-    ));
+          padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _signinText(context),
+              const SizedBox(height: 20),
+              _passwordField(context),
+              const SizedBox(height: 20),
+              _continueButton(context),
+              const SizedBox(height: 20),
+              _forgotPassword(context)
+            ],
+          ),
+        ));
   }
 
   Widget _signinText(BuildContext context) {
@@ -38,7 +42,9 @@ class EnterPasswordPage extends StatelessWidget {
 
   Widget _continueButton(BuildContext context) {
     return BasicAppButton(
-      onPressed: () {},
+      onPressed: () {
+        
+      },
       title: "Continue",
     );
   }
@@ -48,12 +54,11 @@ class EnterPasswordPage extends StatelessWidget {
       text: TextSpan(children: [
         TextSpan(text: "Forgot Password? "),
         TextSpan(
-          text: "Reset",
-          style: TextStyle(fontWeight: FontWeight.bold),
-          recognizer: TapGestureRecognizer()..onTap=(){
-            
-          }
-        )
+            text: "Reset",
+            style: TextStyle(fontWeight: FontWeight.bold),
+            recognizer: TapGestureRecognizer()..onTap = () {
+                AppNavigator.push(context, ForgotPasswordPage());
+            })
       ]),
     );
   }

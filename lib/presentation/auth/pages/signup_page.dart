@@ -25,11 +25,13 @@ class SignupPage extends StatelessWidget {
               _firstNameField(context),
               const SizedBox(height: 20),
               _lastNameField(context),
+              const SizedBox(height: 20),
               _emailField(context),
               const SizedBox(height: 20),
               _continueButton(context),
               const SizedBox(height: 20),
-              _createAccount(context)
+              _createAccount(context),
+              const SizedBox(height: 20),
             ],
           ),
         ));
@@ -81,3 +83,5 @@ class SignupPage extends StatelessWidget {
     );
   }
 }
+
+38:47

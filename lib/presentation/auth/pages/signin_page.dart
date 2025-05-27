@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/common/helper/navigator/app_navigator.dart';
 import 'package:ecommerce_app/common/widgets/button/basic_app_button.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -38,7 +39,9 @@ class SigninPage extends StatelessWidget {
 
   Widget _continueButton(BuildContext context) {
     return BasicAppButton(
-      onPressed: () {},
+      onPressed: () {
+        AppNavigator.pushReplacement(context, SigninPage());
+      },
       title: "Continue",
     );
   }
@@ -48,12 +51,9 @@ class SigninPage extends StatelessWidget {
       text: TextSpan(children: [
         TextSpan(text: "Do you have an account? "),
         TextSpan(
-          text: "Create one",
-          style: TextStyle(fontWeight: FontWeight.bold),
-          recognizer: TapGestureRecognizer()..onTap=(){
-            
-          }
-        )
+            text: "Create one",
+            style: TextStyle(fontWeight: FontWeight.bold),
+            recognizer: TapGestureRecognizer()..onTap = () {})
       ]),
     );
   }
